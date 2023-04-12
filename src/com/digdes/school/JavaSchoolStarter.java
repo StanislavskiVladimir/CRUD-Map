@@ -1,6 +1,6 @@
 package com.digdes.school;
 
-import com.digdes.school.exception.CommandException;
+
 import com.digdes.school.exception.UnknownCommandException;
 import com.digdes.school.model.Delete;
 import com.digdes.school.model.Insert;

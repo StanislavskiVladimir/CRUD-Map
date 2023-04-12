@@ -1,6 +1,5 @@
 package com.digdes.school;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +14,6 @@ public class Main {
             List<Map<String,Object>> result2 = starter.execute("UPDATE VALUES 'active'=false, 'cost'=10.1 where 'id'=3");
             //ѕолучение всех данных из коллекции (т.е. в данном примере вернетс€ 1 запись)
             List<Map<String,Object>> result3 = starter.execute("SELECT");
-
 
         }catch (Exception ex){
             ex.printStackTrace();

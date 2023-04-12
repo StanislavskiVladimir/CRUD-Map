@@ -7,6 +7,21 @@ import java.util.Map;
 public class Select extends AbstractWhere{
     List<Map<String, Object>> result;
 
+    @Override
+    public List<Map<String, Object>> start(List<Map<String, Object>> data, List<String> line){
+        super.start(data, line);
+        return result;
+    }
+    @Override
+    protected void create(int positionWhere, List<String> line) {
+        if (positionWhere != -1) {
+            where = line.subList(positionWhere + 1, line.size());
+        } else {
+            where.clear();
+        }
+        result = new ArrayList<>();
+    }
+
     public void editWithoutConditions(List<Map<String, Object>> data){
         for (int i = 0; i < data.size(); i++) {
             result.add(data.get(i));
@@ -22,20 +37,8 @@ public class Select extends AbstractWhere{
         return  i;
     }
 
-    @Override
-    public List<Map<String, Object>> start(List<Map<String, Object>> data, List<String> line){
-        super.start(data, line);
-        return result;
-    }
 
 
-    @Override
-    protected void create(int positionWhere, List<String> line) {
-        if (positionWhere != -1) {
-            where = line.subList(positionWhere + 1, line.size());
-        } else {
-            where.clear();
-        }
-        result = new ArrayList<>();
-    }
+
+
 }

@@ -1,6 +1,5 @@
 package com.digdes.school.model;
 
-import com.digdes.school.exception.UnknownCommandException;
 import com.digdes.school.exception.—olumnCommanException;
 import com.digdes.school.exception.—omparisonCharacterCommandException;
 
@@ -26,8 +25,7 @@ public abstract class AbstractWhere implements Command {
                     editWithOneConditions(data, i);
                 }
             }
-
-            // ÓÏ‡Ì‰‡ Ò AND Ë OR
+        // ÓÏ‡Ì‰‡ Ò AND Ë OR
         } else {
             for (int i = 0; i < data.size(); i++) {
                 ArrayList<String> operation = new ArrayList<>(where);
@@ -70,7 +68,6 @@ public abstract class AbstractWhere implements Command {
     protected void createWhere(List<String> line) {
         int positionWhere = searchPositionWhere(line);
         create(positionWhere, line);
-
     }
 
     protected void deleteNearestElementsOperation(ArrayList<String> operation, int k) {
@@ -100,7 +97,6 @@ public abstract class AbstractWhere implements Command {
                 } catch (NumberFormatException e) {
                     throw new —omparisonCharacterCommandException();
                 }
-
             }
             case "'ACTIVE'" -> {
                 try {
@@ -113,7 +109,6 @@ public abstract class AbstractWhere implements Command {
             default -> throw new —olumnCommanException();
         }
     }
-
 
     protected void compareValues(Map<String, Object> map, List<String> where) {
         switch (String.valueOf(where.get(1))) {
@@ -159,7 +154,6 @@ public abstract class AbstractWhere implements Command {
                 } catch (Exception ec) {
                     throw new —omparisonCharacterCommandException();
                 }
-
             }
             case "ilike" -> {
                 try {

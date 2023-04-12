@@ -1,7 +1,5 @@
 package com.digdes.school.model;
 
-import com.sun.security.jgss.GSSUtil;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

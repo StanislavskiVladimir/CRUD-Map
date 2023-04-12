@@ -5,6 +5,4 @@ import java.util.Map;
 
 public interface Command {
     public List<Map<String, Object>> start(List<Map<String, Object>> data, List<String> line);
-
-
 }

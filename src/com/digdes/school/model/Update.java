@@ -25,13 +25,11 @@ public class Update extends AbstractWhere{
             }
         }
     }
-
     public void editWithOneConditions(List<Map<String, Object>> data, int i){
         for (int k = 0; k < values.size(); k += 3) {
             data.get(i).put(values.get(k), values.get(k + 2));
         }
     }
-
     public int editWithMoreConditions(List<Map<String, Object>> data, ArrayList<String> operation, int i) {
         if (Boolean.parseBoolean(operation.get(0))) {
             for (int k = 0; k < values.size(); k += 3) {
@@ -50,7 +48,6 @@ public class Update extends AbstractWhere{
                 }
                 if(j == data.get(i).size()){
                     data.remove(i);
-                    //break;
                 }
             }
         }
